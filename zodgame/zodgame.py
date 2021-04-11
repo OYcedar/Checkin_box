@@ -26,10 +26,10 @@ def get_user_info():
         user_r = s.get(url=user_url, headers=headers)
         user_page = user_r.text.encode(
             user_r.encoding).decode(user_r.apparent_encoding)
-        # print(user_page)
+        print(user_page)
         user_info_re = '<input type="hidden" name="formhash" value="(.*?)" />.*title="访问我的空间">(.*?)</a>.*</ul><ul class="creditl mtm bbda cl"><li class="xi1 cl"><em>.(.*?).</em>(.*?).&nbsp;'
         user_info = re.findall(user_info_re, user_page, re.S)
-        # print(user_info)
+        print(user_info)
         if len(user_info) > 0:
             formhash, username, points_name, points_num = user_info[0]
             # print(points_name,points_num)
