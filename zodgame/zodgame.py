@@ -23,6 +23,7 @@ def get_user_info():
     s = requests.Session()
     user_url = 'https://zodgame.xyz/home.php?mod=spacecp&ac=credit'
     try:
+        print(cookie)
         user_r = s.get(url=user_url, headers=headers)
         user_page = user_r.text.encode(
             user_r.encoding).decode(user_r.apparent_encoding)
