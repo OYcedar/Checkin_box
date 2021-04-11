@@ -5,6 +5,7 @@ import sys
 cookie = sys.argv[1]
 
 print('测试')
+print(sys.argv)
 print(cookie)
 
 # tgbot机器人配置,为空为不启用
@@ -23,7 +24,6 @@ def get_user_info():
     s = requests.Session()
     user_url = 'https://zodgame.xyz/home.php?mod=spacecp&ac=credit'
     try:
-        print(cookie)
         user_r = s.get(url=user_url, headers=headers)
         user_page = user_r.text.encode(
             user_r.encoding).decode(user_r.apparent_encoding)
